@@ -20,7 +20,7 @@ constructor(public Api:ApiService,public cookie:CookieService,public tools:ToolS
 }
 
 
-
+public date = new Date().toISOString().split("T")[0];
 list:any = [];
 public userData:any = null;
 public IsLogged = false;

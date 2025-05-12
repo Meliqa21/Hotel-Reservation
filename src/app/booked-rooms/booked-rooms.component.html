@@ -39,7 +39,7 @@
     </thead>
 <tbody>
 @for (item of list; track $index) {
-@if (item.checkInDate < item.checkOutDate && item.id > 11627) {
+@if (item.checkInDate < item.checkOutDate && item.id > 11627 && item.checkInDate > date) {
     <tr>
         <td>{{item.id}}</td>
    

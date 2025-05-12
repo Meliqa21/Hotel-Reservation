@@ -6,6 +6,8 @@ section {
     align-items: center;
 }
 
+
+
 form {
     border-radius: 40px;
     width: 80%;
@@ -86,3 +88,12 @@ button:hover {
     transition: 0.5s;
 }
 
+@media screen and (max-width:900px) {
+    form {
+        width: 90%;
+    }
+    .formDiv {
+        display: flex;
+        flex-direction: column;
+    }
+}

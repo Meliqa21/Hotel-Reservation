@@ -25,7 +25,7 @@ img {
   .carousel-image {
     width: 100%;
     height: auto;
-    border-radius: 10px;
+    border-radius: 20px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   }
   
@@ -40,9 +40,6 @@ img {
     font-size: 30px;
   }
 
-  .list-group-item {
-    width: 50%;
-  }
 
 
   .back-button {

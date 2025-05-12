@@ -57,3 +57,19 @@ section {
     color: black;
     transition: 0.7s;
 }
+
+
+@media screen and (max-width:950px) {
+    #banner {
+        height: 2%;
+    }
+
+    section {
+        flex-direction: column;
+        align-items: center;
+    }
+    .mainDiv {
+        width: 75%;
+    }
+    
+}

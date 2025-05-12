@@ -1,0 +1,88 @@
+section {
+    display: flex;
+    gap: 25px;
+    display: wrap;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 50px 0px;
+    margin-top: 5%;
+}
+
+.mainDiv {
+    width: 20%;
+    box-shadow: 0px 0px 25px 5px #888787;
+}
+
+.mainDiv img {
+    width: 100%;
+}
+
+.button {
+    display: flex;
+    justify-content: space-between;
+}
+
+.txt {
+    padding: 20px;
+}
+
+form {
+    display: flex;
+    max-width: 1400px;
+    width: 75%;
+    margin: 20px auto;
+    box-shadow: 0 0 15px 1px grey;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    border-radius: 10px;
+    flex-wrap: wrap;
+    background-color: rgb(20, 20, 146);
+    color: white;
+    gap: 5px;
+}
+
+form .field {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.mainDiv button {
+    background-color: rgb(20, 20, 146);
+    border: 1px black solid;
+    color: white;
+    height: 50px;
+    width: 50px;
+}
+
+.mainDiv button:hover {
+    cursor: pointer;
+    background-color: rgb(49, 49, 250);
+    color: black;
+    transition: 0.7s;
+}
+
+.filter select {outline: none;border: white 1px solid;}
+.filter {background-color: white;gap: 55px;
+    display: flex;align-items: center;justify-content: center;border-radius: 80cap;
+margin-top: 75px;}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;}
+.filter button {background-color: #405FF2;width: 150px;height: 40px;
+    border-radius: 60em;border: 1px;cursor: pointer;}
+
+
+@media screen and (max-width:750px){
+    section {
+        flex-direction: column;
+        align-items: center;
+    }
+    .mainDiv {
+        width: 70%;
+    }
+    
+}
+

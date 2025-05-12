@@ -1,0 +1,62 @@
+<div class="filter">
+<form [formGroup]="formInfo" (ngSubmit)="applyFilter()">
+    <div class="field">
+        <label for="">Min Price</label>
+        <input type="number" formControlName="priceFrom">
+    </div>
+    <div class="field">
+        <label for="">Max Price</label>
+        <input type="number" formControlName="priceTo">
+    </div>
+    <div class="field">
+        <label for="">Room Type</label>
+        <select formControlName="roomTypeId">
+            <option value="">Choose room type</option>
+            <option value="1">Single Room</option>
+            <option value="2">Double Room</option>
+            <option value="3">Deluxe Room</option>
+        </select>
+    </div>
+    <div class="field">
+        <label for="">Check In</label>
+        <input type="date" formControlName="checkIn">
+    </div>
+    <div class="field">
+        <label for="">Check Out</label>
+        <input type="date" formControlName="checkOut">
+    </div>
+    <div class="field">
+        <label for="">Guests</label>
+        <select formControlName="maximumGuests">
+            <option value="0">Choose Guests</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+        </select>
+    </div>
+    <div class="field btn">
+        <button (click)="GetAllRoom()" type="reset">RESET</button>
+        <button  type="submit">Search</button>
+    </div>
+    
+</form>
+</div>
+<section>
+@for (item of AllRoom; track $index) {
+    <div class="mainDiv">
+        <img [src]="item.images[0].source" alt="">
+        <div class="txt">
+            <h3>{{item.name}}</h3>
+            <div class="button">
+            <p>{{item.pricePerNight}}$ a night</p>
+            <button routerLink="/RoomDetails/{{item.id}}">Book Now</button>
+        </div>
+        </div>
+    </div>
+}
+@empty {
+    <h2>No Rooms Avaliable</h2>
+}
+</section>

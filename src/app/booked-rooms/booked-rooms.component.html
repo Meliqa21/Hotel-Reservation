@@ -1,0 +1,67 @@
+<section>
+
+<div class="left">
+    @if (IsLogged) {
+     <div class="info">
+        <h3>Your Info</h3>
+       <div class="txt">
+        <span class="list">Name = </span> <span class="dtl">{{userData.firstName}}</span>
+       </div>
+       <div class="txt">
+        <span class="list">Last Name : </span> <span class="dtl">{{userData.lastName}}</span>
+       </div>
+       <div class="txt">
+        <span class="list">Email : </span> <span class="dtl">{{userData.email}}</span>
+       </div>
+       <div class="txt">
+        <span class="list">Phone : </span> <span class="dtl">{{userData.phone}}</span>
+       </div>
+          
+    </div>
+    }
+    @else { 
+       <div class="register">
+   <h3>Please register for booking</h3>
+   <app-register></app-register>
+    </div>}
+</div>
+
+<div class="right">
+<table>
+    <thead>
+        <tr>
+            <th>Room</th>
+            <th>Check In</th>
+            <th>Check Out</th>
+            <th>Total Price</th>
+            <th>Delete Booking</th>
+        </tr>
+    </thead>
+<tbody>
+@for (item of list; track $index) {
+@if (item.checkInDate < item.checkOutDate && item.id > 11627) {
+    <tr>
+        <td>{{item.id}}</td>
+   
+    
+        <td>{{item.checkInDate.slice(0,10)}}</td>
+    
+    
+        <td>{{item.checkOutDate.slice(0,10)}}</td>
+    
+   
+        <td>{{item.totalPrice}}$</td>
+    
+ 
+        <td><button class="deleteBtn" type="submit" (click)="DeleteBooking(item.id)">Cancel Booking</button></td>
+       
+    </tr>
+}}
+</tbody>
+
+
+</table> 
+</div>
+
+
+</section>

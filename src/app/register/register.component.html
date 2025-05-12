@@ -1,0 +1,86 @@
+<section>
+    <div class="form">
+<form [formGroup]="formInfo" (ngSubmit)="register()">
+    <img id="formImg" src="hotel-icon-logo.jpg" alt="">
+    <div class="formDiv">
+  <div class="field">
+    <label for="">First Name</label>
+    <input type="text" formControlName="firstName">
+    @if (formInfo.get("firstName")?.invalid && formInfo.get("firstName")?.dirty) {
+      <p class="err">Wrong text...</p>
+    }
+   
+  </div>
+  <div class="field">
+    <label for="">Last Name</label>
+    <input type="text" formControlName="lastName">
+    @if (formInfo.get("lastName")?.invalid && formInfo.get("lastName")?.dirty) {
+      <p class="err">Wrong text...</p>
+    }
+  </div></div>
+  <div class="formDiv">
+  <div class="field">
+    <label for="">Email</label>
+    <input type="email" formControlName="email">
+      @if (formInfo.get("email")?.invalid && formInfo.get("email")?.dirty) {
+      <p class="err">Wrong text...</p>
+      }
+  </div>
+  <div class="field">
+    <label for="">Password</label>
+    <input type="password" formControlName="password">
+      @if (formInfo.get("password")?.invalid && formInfo.get("password")?.dirty) {
+      <p class="err">Wrong text...</p>
+      }
+  </div></div>
+  <div class="formDiv">
+  <div class="field">
+    <label for="">Age</label>
+    <input type="number" formControlName="age">
+     @if (formInfo.get("age")?.invalid && formInfo.get("age")?.dirty) {
+      <p class="err">Wrong text...</p>
+      }
+  </div>
+  <div class="field">
+    <label for="">Address</label>
+    <input type="text" formControlName="address">
+     @if (formInfo.get("address")?.invalid && formInfo.get("address")?.dirty) {
+      <p class="err">Wrong text...</p>
+      }
+  </div></div>
+  <div class="formDiv">
+  <div class="field">
+    <label for="">Phone</label>
+    <input type="number" formControlName="phone">
+     @if (formInfo.get("phone")?.invalid && formInfo.get("phone")?.dirty) {
+      <p class="err">Wrong text...</p>
+      }
+  </div>
+  <div class="field">
+    <label for="">Zipcode</label>
+    <input type="text" formControlName="zipcode">
+     @if (formInfo.get("zipcode")?.invalid && formInfo.get("zipcode")?.dirty) {
+      <p class="err">Wrong text...</p>
+      }
+  </div></div>
+  <div class="formDiv">
+  <div class="field">
+    <label for="">Avatar</label>
+    <input type="text" formControlName="avatar">
+     @if (formInfo.get("avatar")?.invalid && formInfo.get("avatar")?.dirty) {
+      <p class="err">Wrong text...</p>
+      }
+  </div>
+  <div class="field">
+    <label for="">Gender</label>
+    <select formControlName="gender">
+      <option value="">Choose a Gender</option>
+      <option value="MALE">Male</option>
+      <option value="FEMALE">Female</option>
+      <option value="OTHER">Other</option>
+    </select>
+  </div></div>
+  <button [disabled]="formInfo.invalid" type="submit">Register</button>
+</form>
+</div>
+</section>

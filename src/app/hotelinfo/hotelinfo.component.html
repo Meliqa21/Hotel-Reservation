@@ -1,0 +1,19 @@
+<h1><button routerLink="/Hotels" class="back-button">
+    <span class="back-icon">←</span>
+    Back</button>
+{{hotelRoomsName}}</h1>
+
+<section>
+    @for (item of hotelRooms; track $index) {
+        <div class="mainDiv">
+        <img [src]="item.images[0].source" alt="">
+        <div class="txt">
+            <h3>{{item.name}}</h3>
+            <div class="button">
+            <p>{{item.pricePerNight}}$ a night</p>
+            <button routerLink="/RoomDetails/{{item.id}}">Book Now</button>
+        </div>
+        </div>
+    </div>
+    }
+</section>

@@ -1,0 +1,11 @@
+<section>
+    @for (item of hotels; track $index) {
+
+        <div class="card">
+            <img [src]="item.featuredImage" alt="">
+            <h3>{{item.name}}</h3>
+            <h6>{{item.address}}</h6>
+            <button routerLink="/Hotels/{{item.name}}/{{item.id}}">View Rooms</button>
+        </div>
+    }
+</section>

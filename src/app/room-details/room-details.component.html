@@ -1,0 +1,97 @@
+<button routerLink="/Rooms" class="back-button">
+    <span class="back-icon">←</span>
+    Back
+</button>
+<section>
+    <div class="left">
+    <h3>{{room.name}}</h3>
+    <div class="carousel-container">
+    <img
+      [src]="room.images[currentImageIndex]?.source"
+      alt="room image"
+      class="carousel-image"
+      />
+      <p><i (click)="nextImage()" class="fa-solid fa-arrow-right"></i></p>
+     </div></div>
+     <div class="right">
+      <div class="roomcontains">
+    @if (room.roomTypeId === 1 ) {
+        <ul class="list-group list-group-horizontal">
+            <li class="list-group-item"><p><i class="fa-solid fa-circle-check"></i> Single Room</p></li>
+            <li class="list-group-item"><p><i class="fa-solid fa-circle-check"></i> Free Internet</p></li>
+            <li class="list-group-item"><p><i class="fa-solid fa-circle-check"></i> 50 square meter</p></li>
+          </ul>
+          <ul class="list-group list-group-horizontal-sm">
+            <li class="list-group-item"><p><i class="fa-solid fa-circle-check"></i> Double Bed</p></li>
+            <li class="list-group-item"><p><i class="fa-solid fa-circle-check"></i> 2 persons</p></li>
+            <li class="list-group-item"><p> <i class="fa-solid fa-circle-check"></i> Beach view</p></li>
+          </ul>
+          <ul class="list-group list-group-horizontal-md">
+            <li class="list-group-item"><p> <i class="fa-solid fa-circle-check"></i> Breakfast included</p></li>
+            <li class="list-group-item"><p> <i class="fa-solid fa-circle-check"></i> Flat Screen TV</p></li>
+          </ul>
+          
+    }
+    @else if (room.roomTypeId === 2) {
+        <ul class="list-group list-group-horizontal">
+            <li class="list-group-item"><p><i class="fa-solid fa-circle-check"></i> Double Room</p></li>
+            <li class="list-group-item"><p><i class="fa-solid fa-circle-check"></i> Free Internet</p></li>
+            <li class="list-group-item"><p><i class="fa-solid fa-circle-check"></i> 75 square meter</p></li>
+          </ul>
+          <ul class="list-group list-group-horizontal-sm">
+            <li class="list-group-item"><p><i class="fa-solid fa-circle-check"></i> Double Bed</p></li>
+            <li class="list-group-item"><p><i class="fa-solid fa-circle-check"></i> 2 persons</p></li>
+            <li class="list-group-item"><p> <i class="fa-solid fa-circle-check"></i> Beach view</p></li>
+          </ul>
+          <ul class="list-group list-group-horizontal-md">
+            <li class="list-group-item"><p> <i class="fa-solid fa-circle-check"></i> Breakfast included</p></li>
+            <li class="list-group-item"><p> <i class="fa-solid fa-circle-check"></i> Private Balcony</p></li>
+            <li class="list-group-item"><p> <i class="fa-solid fa-circle-check"></i> Flat Screen TV</p></li>
+          </ul>
+    }
+
+    @else {
+        <ul class="list-group list-group-horizontal">
+            <li class="list-group-item"><p><i class="fa-solid fa-circle-check"></i> Deluxe Room</p></li>
+            <li class="list-group-item"><p><i class="fa-solid fa-circle-check"></i> Free Internet</p></li>
+            <li class="list-group-item"><p><i class="fa-solid fa-circle-check"></i> 90 square meter</p></li>
+          </ul>
+          <ul class="list-group list-group-horizontal-sm">
+            <li class="list-group-item"><p><i class="fa-solid fa-circle-check"></i> Double Bed</p></li>
+            <li class="list-group-item"><p><i class="fa-solid fa-circle-check"></i> 2 persons</p></li>
+            <li class="list-group-item"><p> <i class="fa-solid fa-circle-check"></i> Beach view</p></li>
+          </ul>
+          <ul class="list-group list-group-horizontal-md">
+            <li class="list-group-item"><p> <i class="fa-solid fa-circle-check"></i> Breakfast included</p></li>
+            <li class="list-group-item"><p> <i class="fa-solid fa-circle-check"></i> Private Balcony</p></li>
+            <li class="list-group-item"><p> <i class="fa-solid fa-circle-check"></i> Flat Screen TV</p></li>
+          </ul>
+          <ul class="list-group list-group-horizontal">
+            <li class="list-group-item"><p><i class="fa-solid fa-circle-check"></i> Jacuzzi</p></li>
+          </ul>
+    }
+  </div>
+  <div class="Booking">
+    <h3>Book Now</h3>
+    <form [formGroup]="Postinfo">
+      <div class="Date">
+      <div class="formbox">
+      <label>Check In</label>
+      <input type="date" formControlName="CheckIn" [min]="minCheckIn"> 
+    </div>
+    <div class="formbox">
+      <label>Check Out</label>
+      <input type="date" formControlName="CheckOut" [min]="minCheckOut">
+      @if (Postinfo.controls['CheckOut'].value <= Postinfo.controls['CheckIn'].value && Postinfo.get("CheckOut")?.dirty) {
+        <p class="wrong">Please choose valid dates</p>
+      }
+    </div></div>
+    <div class="formbox">
+      <button [disabled]=" !Postinfo.valid || Postinfo.controls['CheckOut'].value <= Postinfo.controls['CheckIn'].value" (click)="PostRoom()">Book</button>
+    </div>
+    </form>
+  </div>
+</div> 
+</section>
+
+

@@ -1,0 +1,129 @@
+header {
+    display: flex;
+    gap: 40px;
+    background-color: rgb(20, 20, 146);
+    align-items: center;
+    padding: 5px 40px;
+    color: rgb(253, 253, 253);
+    position: sticky;
+    top: 0px;
+    box-shadow: 0px 0px 20px 3px rgb(20, 20, 146);
+    flex-direction: row;
+    justify-content: space-between;
+    z-index: 5;
+}
+
+
+.imgcl img {
+    width: 100%;
+    border-radius: 100%;
+    position: sticky;
+    top: 40px;
+}
+
+.imgcl {
+    width: 4%;
+}
+
+ul {
+    display: flex;
+    list-style: none;
+    gap: 35px;
+}
+
+
+
+li {
+    cursor: pointer;
+}
+
+.navBack {
+    background-color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
+    font-weight: 500;
+    font-size: 30px;
+    box-shadow: 0 0 20px 3px black;
+    padding: 0 80px;
+}
+
+.Sign-Out button {
+    background-color: rgb(20, 20, 146);
+    border: 1px black solid;
+    color: white;
+    padding: 7px;
+}
+
+.Sign-Out  button:hover {
+    cursor: pointer;
+    background-color: rgb(49, 49, 250);
+    color: black;
+    transition: 0.7s;
+}
+
+.Sign-Out {
+    display: flex;
+    align-items: center;
+}
+
+.burger-icon {
+  font-size: 30px;
+  cursor: pointer;
+  padding: 10px;
+  user-select: none;
+}
+
+.menu {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: none;
+  position: absolute;
+  top: 40px;
+  background-color: rgb(20, 20, 146);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+}
+
+.menu.open {
+  display: block;
+}
+
+.menu li {
+  padding: 10px 20px;
+  border-bottom: 1px solid #ddd;
+}
+
+.menu li:last-child {
+  border-bottom: none;
+}
+
+.menu li:hover {
+  background-color: #f0f0f0;
+}
+
+.burger-container {
+    display: none;
+}
+
+
+
+@media screen and (max-width:950px){ 
+    .navBack {
+        font-size: 14px;
+    }    
+    .imgcl {
+        display: none;
+    }
+    .burger-container {
+  position: relative;
+}
+.burger-container {
+    display: block;
+}
+.List {
+    display: none;
+}
+    
+
+
+}

@@ -1,0 +1,81 @@
+h1 {
+    text-align: center;
+    margin-top: 50px;
+}
+section {
+    display: flex;
+    gap: 25px;
+    display: wrap;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 50px 0px;
+    margin-top: 5%;
+}
+
+.mainDiv {
+    width: 20%;
+    box-shadow: 0px 0px 25px 5px #888787;
+}
+
+.mainDiv img {
+    width: 100%;
+}
+
+.button {
+    display: flex;
+    justify-content: space-between;
+}
+
+.mainDiv button {
+    background-color: rgb(20, 20, 146);
+    border: 1px black solid;
+    color: white;
+    height: 50px;
+    width: 50px;
+}
+
+.mainDiv button:hover {
+    cursor: pointer;
+    background-color: rgb(49, 49, 250);
+    color: black;
+    transition: 0.7s;
+}
+
+.txt {
+    padding: 20px;
+}
+
+ .back-button {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 16px;
+      font-size: 16px;
+      color: white;
+      background-color: #4a90e2;
+      border: none;
+      border-radius: 8px;
+      text-decoration: none;
+      cursor: pointer;
+    }
+
+    .back-button:hover {
+      background-color: #357ab8;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    .back-icon {
+      font-size: 18px;
+    }
+
+    @media screen and (max-width:750px){
+    section {
+        flex-direction: column;
+        align-items: center;
+    }
+    .mainDiv {
+        width: 70%;
+    }
+    
+}

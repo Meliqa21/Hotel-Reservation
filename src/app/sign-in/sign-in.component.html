@@ -1,0 +1,15 @@
+<form [formGroup]="FormInfo">
+    <img id="formImg" src="hotel-icon-logo.jpg" alt="">
+    <div class="form">
+    <div class="inputs">
+    <div class="field">
+    <label for="">Email</label>
+    <input type="text" formControlName="email">
+</div>
+<div class="field">
+    <label for="">Password</label>
+    <input type="password" formControlName="password">
+</div></div>
+<button (click)="LogIn()">Sign In</button>
+</div>
+</form>

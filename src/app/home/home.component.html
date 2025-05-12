@@ -1,0 +1,22 @@
+<section id="banner">
+<img id="bannerimg" src="https://t3.ftcdn.net/jpg/00/29/13/38/360_F_29133877_bfA2n7cWV53fto2BomyZ6pyRujJTBwjd.jpg" alt="">
+</section>
+
+<div class="fav">
+<h4>Favourite Rooms</h4>
+<hr>
+</div>
+<section>
+@for (item of room; track $index) {
+<div class="mainDiv">
+    <img [src]="item.images[0].source" alt="">
+    <div class="txt">
+        <h3>{{item.name}}</h3>
+        <div class="button">
+        <p>{{item.pricePerNight}}$ a night</p>
+        <button routerLink="/RoomDetails/{{item.id}}">Book Now</button>
+    </div>
+    </div>
+</div>
+}
+</section>

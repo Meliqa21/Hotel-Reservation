@@ -1,0 +1,42 @@
+<header appNavscroll>
+    
+    <div class="imgcl">
+<img src="hotel-icon-logo.jpg" alt="">
+</div><div class="left">
+
+    <div class="burger-container">
+  <div class="burger-icon" (click)="toggleMenu()">
+    <i class="fa-solid fa-bars"></i>
+  </div>
+  <ul class="menu" [class.open]="isMenuOpen">
+    <li routerLink="/">Home</li>
+    <li routerLink="/Rooms">Rooms</li>
+    <li routerLink="/Hotels">Hotels</li>
+    <li routerLink="/Booking">Booking</li>
+    
+  </ul>
+</div>
+
+<ul class="List">
+<li routerLink="/">Home</li>
+<li routerLink="/Rooms">Rooms</li>
+<li routerLink="/Hotels">Hotels</li>
+<li routerLink="/Booking">Booking</li>
+
+</ul>
+</div>
+<div class="right">
+@if (!IsLogged) {
+    <ul>
+        <li routerLink="/SignIn">Sign In</li>
+        <li routerLink="/Register">Register</li>
+    </ul>
+}
+@else {
+<ul class="Sign-Out">
+    <li>{{userData.firstName}}</li>
+    <li (click)="logout()">Sign Out</li>
+</ul>
+}
+</div>
+</header>
